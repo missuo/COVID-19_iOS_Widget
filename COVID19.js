@@ -1,3 +1,13 @@
+/*
+ * @Author: Vincent Young
+ * @Date: 2022-06-09 20:41:57
+ * @LastEditors: Vincent Young
+ * @LastEditTime: 2022-06-09 20:44:04
+ * @FilePath: /COVID-19_iOS_Widget/COVID19.js
+ * @Telegram: https://t.me/missuo
+ * 
+ * Copyright © 2022 by Vincent, All Rights Reserved. 
+ */
 
 const inputValue = "1"
 
