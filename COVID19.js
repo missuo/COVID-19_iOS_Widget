@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-06-09 20:41:57
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-06-09 20:44:04
+ * @LastEditTime: 2022-06-09 22:49:42
  * @FilePath: /COVID-19_iOS_Widget/COVID19.js
  * @Telegram: https://t.me/missuo
  * 
@@ -29,6 +29,12 @@ if (inputValue) {
     let data = resp.data.data[0]
     let username = data.patientname
     let sampleDate = data.collectTime.replace("T"," ")
+    let result = ""
+    if(data.result){
+        result = data.result    
+    }else{
+        result = "结果未出"
+    }
     let title = data.jgmc
     let logo = "https://s3.missuo.me/images/xEWdzv.png"
 
@@ -79,8 +85,8 @@ if (inputValue) {
                 props: {
                     uri: logo,
                     frame: {
-                        width: 60,
-                        height: 60
+                        width: 50,
+                        height: 50
                     },
                     resizable: true,
                     cornerRadius: 15
@@ -90,7 +96,7 @@ if (inputValue) {
             const desc = {
                 type: "text",
                 props: {
-                    text: username + " 上次核酸",
+                    text: username + " 上次核酸 （" + result + ")",
                     font: $font(10),
                     color: $color("#aaaaaa"),
                     minimumScaleFactor: 0.5,
